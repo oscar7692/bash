@@ -1,17 +1,11 @@
 #!/bin/ksh
 
-###############################
-# Escrito en mexico!!!        #
-# escrito el 22/01/2013 por:  #
-#        Pedro Amezquita      #
-# juan_amezquita@xyratex.com  #
-###############################
 txtvrd="\\033[1;32m"   # Verde
 txtamr="\\033[1;33m"   # Amarillo
 txtazl="\\033[1;36m"   # Azul claro
 txtbnc="\\033[1;37m"   # Blanco
 txtroj="\\033[1;31m"   # Rojo
-txtbnk="\\033[5m" 
+txtbnk="\\033[5m"
 txtbno="\\033[25m"
 menuopts=5
 
@@ -51,28 +45,28 @@ echo " ${txtbnc}5. ${txtazl}Salir...............................................
 1)   echo ""
      echo "${txtazl}Validabdo SED..."
      sed_configure_tc_sg -adpt=mpt2sas -adpn=0xa000 -bus=0 -id=0x110  -display_only
-     echo "${txtbnc}Presione [${txtazl}Enter${txtbnc}] para continuar. . .";     
+     echo "${txtbnc}Presione [${txtazl}Enter${txtbnc}] para continuar. . .";
      read enterKey;;
 
 2)   echo ""
      echo "${txtazl}Eliminando encriptacion SED..."
      ./SED_EraseBand.sh
      ipmitool sel clear
-     echo "${txtbnc}Presione [${txtazl}Enter${txtbnc}] para continuar. . .";  
+     echo "${txtbnc}Presione [${txtazl}Enter${txtbnc}] para continuar. . .";
      read enterKey;;
 
 3)   echo ""
      echo "${txtazl}Apagando UUT..."
      ipmitool sel clear
      echo "${txtbnc}Presione [${txtazl}Enter${txtbnc}] para continuar. . .";
-     read enterKey;;    
-     
+     read enterKey;;
+
 4)   echo ""
      echo "${txtazl}Limpiando SEL..."
      shutdown -h now
      echo "${txtbnc}Presione [${txtazl}Enter${txtbnc}] para continuar. . .";
      read enterKey;;
-     
+
 5)   echo ""
      clear
      echo "${txtamr}Written by Pedro Amezquita, Tanks for using Mexican software!!!${txtbnc}" ;
